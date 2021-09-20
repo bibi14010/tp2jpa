@@ -20,8 +20,8 @@ public class Prestataire extends Personne {
 		super();
 	}
 	
-	public Prestataire(Entreprise entreprise, Agenda agenda) {
-		super();
+	public Prestataire(String firstName, String lastName, String email, String password,Entreprise entreprise, Agenda agenda) {
+		super(firstName,lastName,email,password);
 		this.entreprise = entreprise;
 		this.agenda = agenda;
 	}

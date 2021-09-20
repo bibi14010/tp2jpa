@@ -25,7 +25,7 @@ public class AgendaDao {
 	}
 	
 	public void findByAppointment(int id) {
-		List<Agenda> resultList = manager.createQuery("Select a from Agenda a where a.id="+id,Agenda.class).getResultList();
+		List<Agenda> resultList = manager.createQuery("Select a.prestataire.agenda from Appointment a where a.id="+id,Agenda.class).getResultList();
 		System.out.println("Agendas Avaliable : "+resultList.size());
 		for (Agenda agenda : resultList) {
 			if(agenda.getId()==id) {
