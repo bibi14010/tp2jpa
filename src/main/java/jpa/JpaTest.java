@@ -26,10 +26,10 @@ public class JpaTest {
 
 
 		try {
-			Location l = new Location("Rue des bateliers",2,35580,"Saint-Senoux");
+			Location l = new Location("Rue du cratère",2,1256,"Base Lunaire 8851");
 			manager.persist(l);
 			
-			Entreprise e = new Entreprise("Atelier Senonais",0,l);
+			Entreprise e = new Entreprise("Mechant Industries",0,l);
 			manager.persist(e);
 			
 			Agenda a = new Agenda();

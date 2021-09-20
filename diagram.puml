@@ -1,0 +1,134 @@
+@startuml
+class Agenda [[java:jpa.objects.Agenda]] {
+	-Id: int
+	+Agenda()
+	+getId(): int
+	+setId(id: int): void
+}
+
+
+class Location [[java:jpa.objects.Location]] {
+	-id: int
+	-street: String
+	-streetNumber: int
+	-postCode: int
+	-city: String
+	+Location()
+	+Location(street: String, streetNumber: int, postCode: int, city: String)
+	+getId(): int
+	+setId(id: int): void
+	+getStreet(): String
+	+setStreet(street: String): void
+	+getStreetNumber(): int
+	+setStreetNumber(streetNumber: int): void
+	+getPostCode(): int
+	+setPostCode(postCode: int): void
+	+getCity(): String
+	+setCity(city: String): void
+}
+
+class Appointment [[java:jpa.objects.Appointment]] {
+	-Id: int
+	-date: Date
+	-client: Client
+	-prestataire: Prestataire
+	-location: Location
+	-time: int
+	-statut: int
+	-description: String
+	+Appointment(date: Date, client: Client, prestataire: Prestataire, location: Location, time: int, statut: int, description: String)
+	+Appointment()
+	+getId(): int
+	+setId(id: int): void
+	+getDate(): Date
+	+setDate(date: Date): void
+	+getClient(): Client
+	+setClient(client: Client): void
+	+getPrestataire(): Prestataire
+	+setPrestataire(prestataire: Prestataire): void
+	+getLocation(): Location
+	+setLocation(location: Location): void
+	+getTime(): int
+	+setTime(time: int): void
+	+getStatut(): int
+	+setStatut(statut: int): void
+	+getDescription(): String
+	+setDescription(description: String): void
+}
+
+class Entreprise [[java:jpa.objects.Entreprise]] {
+	-id: int
+	-name: String
+	-sector: int
+	-location: Location
+	+Entreprise()
+	+Entreprise(name: String, sector: int, location: Location)
+	+getId(): int
+	+setId(id: int): void
+	+getName(): String
+	+setName(name: String): void
+	+getSector(): int
+	+setSector(sector: int): void
+	+getLocation(): Location
+	+setLocation(location: Location): void
+}
+
+class Prestataire [[java:jpa.objects.Prestataire]] {
+	-id: int
+	-entreprise: Entreprise
+	-agenda: Agenda
+	+Prestataire()
+	+Prestataire(firstName: String, lastName: String, email: String, password: String, entreprise: Entreprise, agenda: Agenda)
+	+getId(): int
+	+setId(id: int): void
+	+getEntreprise(): Entreprise
+	+setEntreprise(entreprise: Entreprise): void
+	+getAgenda(): Agenda
+	+setAgenda(agenda: Agenda): void
+}
+class Personne {
+}
+Personne <|-- Prestataire
+
+class Client [[java:jpa.objects.Client]] {
+	-id: int
+	-numberOfAppointment: int
+	+Client(firstName: String, lastName: String, email: String, password: String, numberOfAppointment: int)
+	+Client()
+	+getId(): int
+	+setId(id: int): void
+	+getNumberOfAppointment(): int
+	+setNumberOfAppointment(numberOfAppointment: int): void
+}
+class Personne {
+}
+Personne <|-- Client
+
+class Personne [[java:jpa.objects.Personne]] {
+	-id: int
+	-firstName: String
+	-lastName: String
+	-email: String
+	-password: String
+	+Personne()
+	+Personne(firstName: String, lastName: String, email: String, password: String)
+	+getId(): int
+	+setId(id: int): void
+	+getFirstName(): String
+	+setFirstName(firstName: String): void
+	+getLastName(): String
+	+setLastName(lastName: String): void
+	+getEmail(): String
+	+setEmail(email: String): void
+	+getPassword(): String
+	+setPassword(password: String): void
+}
+
+Agenda <-- Prestataire
+Prestataire --> Entreprise
+
+Appointment --> Client
+Appointment --> Prestataire
+Appointment --> Location
+
+@enduml
