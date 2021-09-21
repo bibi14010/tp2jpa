@@ -17,26 +17,30 @@ public class LocationDao {
 		this.manager = manager;
 	}
 	
-	public void find() {
+	public List<Location> find() {
 		List<Location> resultList = manager.createNamedQuery("toutesLesLocations",Location.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByCity(String city) {
+	public List<Location> findByCity(String city) {
 		Query query = manager.createNamedQuery("toutesLesLocationsParVille",Location.class);
 		query.setParameter("cityWanted",city);
 		List<Location> resultList = query.getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByEntreprise(Entreprise e) {
+	public List<Location> findByEntreprise(Entreprise e) {
 		List<Location> resultList = manager.createQuery("select e.location from Entreprise e where e.location.id="+e.getLocation().getId(),Location.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByAppointment(Appointment a) {
+	public List<Location> findByAppointment(Appointment a) {
 		List<Location> resultList = manager.createQuery("select l from Location l where l.id="+a.getLocation().getId(),Location.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
 	private void displayList(List<Location> resultList) {

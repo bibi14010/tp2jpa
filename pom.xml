@@ -38,7 +38,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.22</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -63,7 +63,6 @@
 				<version>9.4.31.v20200723</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					
 					<webApp>
 						<contextPath>/</contextPath>
 					</webApp>
