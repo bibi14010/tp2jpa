@@ -37,6 +37,12 @@ public class LocationDao {
 		return resultList;
 	}
 	
+	public List<Location> findById(int id) {
+		List<Location> resultList = manager.createQuery("select l from Location l where l.id="+id,Location.class).getResultList();
+		this.displayList(resultList);
+		return resultList;
+	}
+	
 	public List<Location> findByAppointment(Appointment a) {
 		List<Location> resultList = manager.createQuery("select l from Location l where l.id="+a.getLocation().getId(),Location.class).getResultList();
 		this.displayList(resultList);

@@ -17,9 +17,10 @@ public class EntrepriseDao {
 		this.manager = manager;
 	}
 	
-	public void find() {
+	public List<Entreprise> find() {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e",Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
 	public void findById(int id) {
