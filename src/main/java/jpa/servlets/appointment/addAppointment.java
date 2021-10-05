@@ -78,6 +78,7 @@ public class addAppointment extends HttpServlet{
 		
 		out.println("<INPUT type=submit value=Send>\r\n"
 				+ "		</FORM>\r\n"
+				+"<a href=\"/\">Retourner à l'accueil</a>"
 				+ "	</body>\r\n"
 				+ "</html>");
 		
@@ -133,7 +134,8 @@ public class addAppointment extends HttpServlet{
 					+ request.getParameter("date") + "\n" +
 					"<LI> Lieu: "
 					+locations.get(0).getCity()+","+locations.get(0).getStreetNumber()+" "+locations.get(0).getStreet()+","+locations.get(0).getPostCode()+
-				"</UL>\n" +				
+				"</UL>\n" +	
+				"<a href=\"/\">Retourner à l'accueil</a>"+
 		"</BODY></HTML>");
 	}
 }

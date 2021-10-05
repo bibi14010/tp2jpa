@@ -63,7 +63,8 @@ public class AddClientServlet extends HttpServlet{
 						+ request.getParameter("lname") + "\n" +
 						" <LI>Age: "
 						+ request.getParameter("email") + "\n" +
-					"</UL>\n" +				
+					"</UL>\n" +	
+					"<a href=\"/\">Retourner à l'accueil</a>"+
 			"</BODY></HTML>");
 	}	
 	

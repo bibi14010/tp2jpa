@@ -38,6 +38,7 @@ public class ClientServlet extends HttpServlet{
 		}else {
 			p.print("No client found.");
 		}
+		p.println("<a href=\"/\">Retourner à l'accueil</a>");
 		p.flush();
 		manager.close();
 		factory.close();

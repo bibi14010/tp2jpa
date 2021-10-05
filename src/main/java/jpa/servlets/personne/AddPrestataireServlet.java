@@ -56,6 +56,7 @@ public class AddPrestataireServlet extends HttpServlet{
 		
 		out.println("<INPUT type=submit value=Send>\r\n"
 				+ "		</FORM>\r\n"
+				+"<a href=\"/\">Retourner à l'accueil</a>"
 				+ "	</body>\r\n"
 				+ "</html>");
 

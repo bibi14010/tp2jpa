@@ -52,6 +52,7 @@ public class AddEntrepriseServlet extends HttpServlet{
 		
 		out.println("<INPUT type=submit value=Send>\r\n"
 				+ "		</FORM>\r\n"
+				+"<a href=\"/\">Retourner à l'accueil</a>"
 				+ "	</body>\r\n"
 				+ "</html>");
 
@@ -94,7 +95,8 @@ public class AddEntrepriseServlet extends HttpServlet{
 					+ l.get(0).getStreet() + "\n" +
 					" <LI>-: "
 					+ l.get(0).getPostCode() + "\n" +
-					"</UL>\n" +				
+					"</UL>\n" +			
+					"<a href=\"/\">Retourner à l'accueil</a>"+
 			"</BODY></HTML>");
 	}	
 }

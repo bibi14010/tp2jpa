@@ -37,8 +37,9 @@ public class EntrepriseServlet extends HttpServlet{
 				p.print("\n");
 			}			
 		}else {
-			p.print("No entreprise found.");
+			p.print("No entreprise found");
 		}
+		p.println("<a href=\"/\">Retourner à l'accueil</a>");
 		p.flush();
 		manager.close();
 		factory.close();

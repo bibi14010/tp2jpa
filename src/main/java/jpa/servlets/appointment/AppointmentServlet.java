@@ -41,6 +41,7 @@ public class AppointmentServlet extends HttpServlet{
 		}else {
 			p.print("No appointment found.");
 		}
+		p.println("<a href=\"/\">Retourner à l'accueil</a>");
 		p.flush();
 		manager.close();
 		factory.close();

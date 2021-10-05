@@ -69,7 +69,8 @@ public class AddLocationServlet extends HttpServlet {
 					+ request.getParameter("streetNumber") + "\n" +
 					" <LI>Age: "
 					+ request.getParameter("postCode") + "\n" +
-					"</UL>\n" +				
+					"</UL>\n" +		
+					"<a href=\"/\">Retourner à l'accueil</a>"+
 			"</BODY></HTML>");
 	}	
 	

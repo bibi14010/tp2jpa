@@ -38,6 +38,7 @@ public class PrestataireServlet extends HttpServlet{
 		}else {
 			p.print("No prestataire found.");
 		}
+		p.println("<a href=\"/\">Retourner à l'accueil</a>");
 		p.flush();
 		manager.close();
 		factory.close();
