@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import jpa.objects.Agenda;
 import jpa.objects.Appointment;
 import jpa.objects.Client;
 import jpa.objects.Location;
@@ -19,29 +18,34 @@ public class AppointmentDao {
 		this.manager = manager;
 	}
 	
-	public void find() {
+	public List<Appointment> find() {
 		List<Appointment> resultList = manager.createQuery("select a from Appointment a",Appointment.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByDate(Date date) {
+	public List<Appointment> findByDate(Date date) {
 		List<Appointment> resultList = manager.createQuery("select a from Appointment a where a.date="+date,Appointment.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByLocation(Location l) {
+	public List<Appointment> findByLocation(Location l) {
 		List<Appointment> resultList = manager.createQuery("select a from Appointment a where a.location.id="+l.getId(),Appointment.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByPrestataire(Prestataire p) {
+	public List<Appointment> findByPrestataire(Prestataire p) {
 		List<Appointment> resultList = manager.createQuery("select a from Appointment a where a.prestataire.id="+p.getId(),Appointment.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByClient(Client c) {
+	public List<Appointment> findByClient(Client c) {
 		List<Appointment> resultList = manager.createQuery("select a from Appointment a where a.client.id="+c.getId(),Appointment.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
 	

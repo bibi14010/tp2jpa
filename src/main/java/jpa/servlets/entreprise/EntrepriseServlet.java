@@ -33,7 +33,8 @@ public class EntrepriseServlet extends HttpServlet{
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
 		if(entreprises.size()>0) {
 			for (Entreprise entreprise : entreprises) {
-				p.print(entreprise.getName()+"-"+entreprise.getLocation().getCity());			
+				p.print(entreprise.getName()+"-"+entreprise.getLocation().getCity());		
+				p.print("\n");
 			}			
 		}else {
 			p.print("No entreprise found.");

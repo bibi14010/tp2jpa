@@ -1,6 +1,6 @@
 package jpa.objects;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.*;
 
@@ -12,8 +12,7 @@ public class Appointment {
 	@GeneratedValue
 	private int Id;
 	
-	@Temporal(value = TemporalType.DATE)
-	private Date date;
+	private LocalDate date;
 	
 	@ManyToOne(targetEntity=Client.class, fetch=FetchType.EAGER)
 	private Client client;
@@ -32,7 +31,7 @@ public class Appointment {
 	
 	private String description;
 
-	public Appointment(Date date, Client client, Prestataire prestataire, Location location, int time, int statut,
+	public Appointment(LocalDate date, Client client, Prestataire prestataire, Location location, int time, int statut,
 			String description) {
 		super();
 		this.date = date;
@@ -55,11 +54,11 @@ public class Appointment {
 		Id = id;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 

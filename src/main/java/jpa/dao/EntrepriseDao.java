@@ -23,49 +23,58 @@ public class EntrepriseDao {
 		return resultList;
 	}
 	
-	public void findById(int id) {
+	public List<Entreprise> findById(int id) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where id="+id,Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByLocation(Location l) {
+	public List<Entreprise> findByLocation(Location l) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.location.id="+l.getId(),Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByName(String name) {
+	public List<Entreprise> findByName(String name) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.name like %"+name+"%",Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByAppointemnt(Appointment a) {
+	public List<Entreprise> findByAppointemnt(Appointment a) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.id="+a.getPrestataire().getEntreprise().getId(),Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByCity(String city) {
+	public List<Entreprise> findByCity(String city) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.location.city like %"+city+"%",Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByStreet(String street) {
+	public List<Entreprise> findByStreet(String street) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.location.street like %"+street+"%",Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByPostCode(int pc) {
+	public List<Entreprise> findByPostCode(int pc) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.location.postCode="+pc,Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByPrestataire(Prestataire p) {
+	public List<Entreprise> findByPrestataire(Prestataire p) {
 		List<Entreprise> resultList = manager.createQuery("select p.entreprise from Prestataire p where p.id="+p.getId(),Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findBySector(String sector) {
+	public List<Entreprise> findBySector(String sector) {
 		List<Entreprise> resultList = manager.createQuery("select e from Entreprise e where e.sector like %"+sector+"%",Entreprise.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
 	private void displayList(List<Entreprise> resultList) {

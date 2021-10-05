@@ -13,17 +13,14 @@ public class Prestataire extends Personne {
 	@ManyToOne(targetEntity=Entreprise.class, fetch=FetchType.EAGER)
 	private Entreprise entreprise;
 	
-	@OneToOne(targetEntity=Agenda.class, fetch=FetchType.EAGER)
-	private Agenda agenda;
 
 	public Prestataire() {
 		super();
 	}
 	
-	public Prestataire(String firstName, String lastName, String email, String password,Entreprise entreprise, Agenda agenda) {
+	public Prestataire(String firstName, String lastName, String email, String password,Entreprise entreprise) {
 		super(firstName,lastName,email,password);
 		this.entreprise = entreprise;
-		this.agenda = agenda;
 	}
 
 	public int getId() {
@@ -42,12 +39,5 @@ public class Prestataire extends Personne {
 		this.entreprise = entreprise;
 	}
 
-	public Agenda getAgenda() {
-		return agenda;
-	}
-
-	public void setAgenda(Agenda agenda) {
-		this.agenda = agenda;
-	}
 	
 }

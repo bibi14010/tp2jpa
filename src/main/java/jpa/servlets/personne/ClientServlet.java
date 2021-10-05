@@ -32,7 +32,8 @@ public class ClientServlet extends HttpServlet{
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
 		if(clients.size()>0) {
 			for (Client client : clients) {
-				p.print(client.getFirstName()+"-"+client.getLastName()+"-"+client.getEmail());			
+				p.print(client.getFirstName()+" "+client.getLastName()+"-"+client.getEmail());
+				p.print("\n");
 			}			
 		}else {
 			p.print("No client found.");

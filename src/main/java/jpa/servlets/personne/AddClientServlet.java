@@ -57,12 +57,12 @@ public class AddClientServlet extends HttpServlet{
 		out.println("<HTML>\n<BODY>\n" +
 					"<H1>Recapitulatif des informations</H1>\n" +
 					"<UL>\n" +			
-			" <LI>Nom: "
-					+ request.getParameter("fname") + "\n" +
-					" <LI>Prenom: "
-					+ request.getParameter("lname") + "\n" +
-					" <LI>Age: "
-					+ request.getParameter("email") + "\n" +
+						" <LI>Nom: "
+						+ request.getParameter("fname") + "\n" +
+						" <LI>Prenom: "
+						+ request.getParameter("lname") + "\n" +
+						" <LI>Age: "
+						+ request.getParameter("email") + "\n" +
 					"</UL>\n" +				
 			"</BODY></HTML>");
 	}	

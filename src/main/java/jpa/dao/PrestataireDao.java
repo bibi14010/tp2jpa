@@ -15,24 +15,28 @@ public class PrestataireDao {
 		this.manager = manager;
 	}
 	
-	public void find() {
+	public List<Prestataire> find() {
 		List<Prestataire> resultList = manager.createQuery("select p from Prestataire p",Prestataire.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findById(int id) {
+	public List<Prestataire> findById(int id) {
 		List<Prestataire> resultList = manager.createQuery("select p from Prestataire p where p.id="+id,Prestataire.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByEntreprise(Entreprise e) {
+	public List<Prestataire> findByEntreprise(Entreprise e) {
 		List<Prestataire> resultList = manager.createQuery("select p from Prestataire p where p.entreprise.id="+e.getId(),Prestataire.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
-	public void findByAppointment(Appointment a) {
+	public List<Prestataire> findByAppointment(Appointment a) {
 		List<Prestataire> resultList = manager.createQuery("select a.prestataire from Appointment a where a.id="+a.getId(),Prestataire.class).getResultList();
 		this.displayList(resultList);
+		return resultList;
 	}
 	
 	private void displayList(List<Prestataire> resultList) {

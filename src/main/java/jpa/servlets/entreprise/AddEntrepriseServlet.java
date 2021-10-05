@@ -46,7 +46,7 @@ public class AddEntrepriseServlet extends HttpServlet{
 		List<Location> location = locationDao.find();
 		out.print("<select name=\"location\">");
 		for (Location location2 : location) {
-			out.print("<option value="+location2.getId()+">"+location2.getCity()+","+location2.getStreetNumber()+" "+location2.getStreet()+","+location2.getPostCode()+"</option>");
+			out.print("<option value="+location2.getId()+">"+location2.toString()+"</option>");
 		}
 		out.print("</select>");
 		

@@ -1,4 +1,4 @@
-package jpa.servlets.location;
+package jpa.servlets.personne;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,42 +13,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jpa.EntityManagerHelper;
-import jpa.dao.LocationDao;
-import jpa.objects.Location;
+import jpa.dao.PrestataireDao;
+import jpa.objects.Prestataire;
 
-@WebServlet(name="location",
-urlPatterns={"/location"})
-public class LocationServlet extends HttpServlet {
+@WebServlet(name="PrestataireServlet", urlPatterns="/prestataire")
+public class PrestataireServlet extends HttpServlet{
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req,HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("dev");
 		EntityManager manager = factory.createEntityManager();
 		
-		LocationDao locationDao = new LocationDao(manager);
-		List<Location> location = locationDao.find();
+		PrestataireDao prestataireDao = new PrestataireDao(manager);
+		List<Prestataire> prestataires = prestataireDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
-		if(location.size()>0) {
-			for (Location location2 : location) {
-				p.print(location2.toString());			
+		if(prestataires.size()>0) {
+			for (Prestataire prestataire : prestataires) {
+				p.print(prestataire.getFirstName()+" "+prestataire.getLastName()+"-"+prestataire.getEmail()+"-"+prestataire.getEntreprise().getName());
 				p.print("\n");
 			}			
 		}else {
-			p.print("No location found.");
+			p.print("No prestataire found.");
 		}
 		p.flush();
 		manager.close();
 		factory.close();
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
-	}	
 }
