@@ -1,46 +1,234 @@
+/*C21*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C22*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C23*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C24*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C25*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C26*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C27*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+/*C28*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
+DISCONNECT
+/*C29*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
 /*C30*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C32*/SET SCHEMA PUBLIC
-INSERT INTO APPOINTMENTS VALUES(10,NULL,NULL,0,54,2,1,6)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
-COMMIT
-DISCONNECT
-/*C33*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C34*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
 DISCONNECT
 /*C31*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
 DISCONNECT
-/*C35*/SET SCHEMA PUBLIC
+/*C32*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
 DISCONNECT
-/*C36*/SET SCHEMA PUBLIC
-DELETE FROM APPOINTMENTS WHERE ID=10
-COMMIT
+/*C33*/SET SCHEMA PUBLIC
+drop table if exists Appointments CASCADE 
+drop table if exists Entreprises CASCADE 
+drop table if exists Locations CASCADE 
+drop table if exists Personnes CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Appointments (Id integer not null, date date, description varchar(255), statut integer not null, time integer not null, client_id integer, location_id integer, prestataire_id integer, primary key (Id))
+create table Entreprises (id integer not null, name varchar(255), sector integer not null, location_id integer, primary key (id))
+create table Locations (id integer not null, city varchar(255), postCode integer not null, street varchar(255), streetNumber integer not null, primary key (id))
+create table Personnes (DTYPE varchar(31) not null, id integer not null, email varchar(255), firstName varchar(255), lastName varchar(255), password varchar(255), numberOfAppointment integer, entreprise_id integer, primary key (id))
+alter table Personnes add constraint UK_qt2f5rhtqqlkvj3e3uhqhhgmi unique (email)
+alter table Appointments add constraint FK2obvnensdat0m1qchgo5k687j foreign key (client_id) references Personnes
+alter table Appointments add constraint FK52rixqbolvxr1j342nupuyyki foreign key (location_id) references Locations
+alter table Appointments add constraint FKhiinoni0fi6y0lwrg8kmya849 foreign key (prestataire_id) references Personnes
+alter table Entreprises add constraint FK4ixf2gdkbwhc8gkvcf3793t6q foreign key (location_id) references Locations
+alter table Personnes add constraint FKjt02yk2na879u22h5vwxbshme foreign key (entreprise_id) references Entreprises
 DISCONNECT
-/*C37*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C39*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C38*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C40*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C41*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C42*/SET SCHEMA PUBLIC
-INSERT INTO APPOINTMENTS VALUES(11,'2021-10-05',NULL,0,35,2,1,8)
-ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 12
-COMMIT
-DISCONNECT
-/*C43*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C44*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C45*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C47*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C46*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C48*/SET SCHEMA PUBLIC
-DISCONNECT
+/*C27*/DISCONNECT
+/*C29*/DISCONNECT

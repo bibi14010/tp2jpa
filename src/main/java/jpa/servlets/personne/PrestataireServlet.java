@@ -30,15 +30,16 @@ public class PrestataireServlet extends HttpServlet{
 		List<Prestataire> prestataires = prestataireDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
+		p.print("<!DOCTYPE html><html>");
 		if(prestataires.size()>0) {
 			for (Prestataire prestataire : prestataires) {
 				p.print(prestataire.getFirstName()+" "+prestataire.getLastName()+"-"+prestataire.getEmail()+"-"+prestataire.getEntreprise().getName());
 				p.print("\n");
 			}			
 		}else {
-			p.print("No prestataire found.");
+			p.print("No prestataire found.<br>");
 		}
-		p.println("<a href=\"/\">Retourner à l'accueil</a>");
+		p.println("<a href=\"/\">Retourner à l'accueil</a></html>");
 		p.flush();
 		manager.close();
 		factory.close();

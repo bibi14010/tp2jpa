@@ -31,15 +31,16 @@ public class EntrepriseServlet extends HttpServlet{
 		List<Entreprise> entreprises = entrepriseDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
+		p.print("<!DOCTYPE html><html>");
 		if(entreprises.size()>0) {
 			for (Entreprise entreprise : entreprises) {
 				p.print(entreprise.getName()+"-"+entreprise.getLocation().getCity());		
 				p.print("\n");
 			}			
 		}else {
-			p.print("No entreprise found");
+			p.print("No entreprise found.<br>");
 		}
-		p.println("<a href=\"/\">Retourner à l'accueil</a>");
+		p.println("<a href=\"/\">Retourner à l'accueil</a></html>");
 		p.flush();
 		manager.close();
 		factory.close();

@@ -30,15 +30,16 @@ public class ClientServlet extends HttpServlet{
 		List<Client> clients = clientDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
+		p.print("<!DOCTYPE html><html>");
 		if(clients.size()>0) {
 			for (Client client : clients) {
 				p.print(client.getFirstName()+" "+client.getLastName()+"-"+client.getEmail());
 				p.print("\n");
 			}			
 		}else {
-			p.print("No client found.");
+			p.print("No client found.<br>");
 		}
-		p.println("<a href=\"/\">Retourner à l'accueil</a>");
+		p.println("<a href=\"/\">Retourner à l'accueil</a></html>");
 		p.flush();
 		manager.close();
 		factory.close();

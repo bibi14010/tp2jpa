@@ -32,15 +32,16 @@ public class LocationServlet extends HttpServlet {
 		List<Location> location = locationDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
+		p.print("<!DOCTYPE html><html>");
 		if(location.size()>0) {
 			for (Location location2 : location) {
 				p.print(location2.toString());			
 				p.print("\n");
 			}			
 		}else {
-			p.print("No location found.");
+			p.print("No location found.<br>");
 		}
-		p.println("<a href=\"/\">Retourner à l'accueil</a>");
+		p.println("<a href=\"/\">Retourner à l'accueil</a></html>");
 		p.flush();
 		manager.close();
 		factory.close();

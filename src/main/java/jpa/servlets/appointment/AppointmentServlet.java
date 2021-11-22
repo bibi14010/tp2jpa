@@ -32,16 +32,16 @@ public class AppointmentServlet extends HttpServlet{
 		List<Appointment> appointments = appointmentDao.find();
 		
 		PrintWriter p = new PrintWriter(resp.getOutputStream());
-
+		p.print("<!DOCTYPE html><html>");
 		if(appointments.size()>0) {
 			for (Appointment appointment : appointments) {
 				p.print(appointment.getDate()+"-"+appointment.getPrestataire().getEmail()+"-"+appointment.getClient().getEmail()+"-"+appointment.getLocation().toString());
 				p.print("\n");
 			}			
 		}else {
-			p.print("No appointment found.");
+			p.print("No appointment found.<br>");
 		}
-		p.println("<a href=\"/\">Retourner à l'accueil</a>");
+		p.println("<a href=\"/\">Retourner à l'accueil</a></html>");
 		p.flush();
 		manager.close();
 		factory.close();
